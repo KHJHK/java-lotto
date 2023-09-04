@@ -7,10 +7,12 @@ public class WinningLotto{
     private final String OUT_OF_LOTTO_SIZE_ERROR = "로또 번호는 정확히 6개가 입력되어야 합니다.";
     private final int WINNING_LOTTO_CNT = 6;
     private final Lotto winningLotto;
+    private final int bonusNum;
 
     public WinningLotto(List<Integer> numbers, int bonusNum){
         validateDuplicateBonusNumber(numbers, bonusNum);
-        winningLotto = new Lotto(numbers, bonusNum);
+        winningLotto = new Lotto(numbers);
+        this.bonusNum = bonusNum;
     }
 
     private void validateDuplicateBonusNumber(List<Integer> numbers, int bonusNum){
@@ -27,8 +29,15 @@ public class WinningLotto{
     }
 
     public boolean compareBonusNum(Lotto lotto){
-        if(lotto.getBonusNum() == winningLotto.getBonusNum()) return true;
-        return false;
+        return lotto.getNumbers().contains(bonusNum);
+    }
+
+    public Lotto getWinningLotto(){
+        return winningLotto;
+    }
+
+    public int getBonusNum(){
+        return bonusNum;
     }
 
 

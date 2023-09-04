@@ -20,16 +20,11 @@ public class LottoAmount {
     private void validateAmount(int amount){
         if(amount < MIN_PAY) throw new IllegalArgumentException(ZERO_PAY_ERROR_MESSAGE);
         if(amount % MIN_PAY != 0) throw new IllegalArgumentException(PAY_ERROR_MESSAGE);
+
     }
 
     public int lottoCount() {
         return amount / MIN_PAY;
-    }
-
-    public Lotto makeLotto(){
-        List<Integer> pickNums = Randoms.pickUniqueNumbersInRange(1, 45, 6);
-        Collections.sort(pickNums);
-        return new Lotto(pickNums);
     }
 
 }

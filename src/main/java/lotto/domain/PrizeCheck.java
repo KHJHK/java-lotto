@@ -6,15 +6,14 @@ import java.util.Map;
 public class PrizeCheck {
     private Map<Prize, Integer> playerPrize = new EnumMap<>(Prize.class);
 
-    public PrizeCheck(PlayerLotto playerLottos, WinningLotto winningLotto){
+    public PrizeCheck(PlayerLotto playerLotto, WinningLotto winningLotto){
         int correctCnt = 0;
         boolean isBonusCorrect = false;
-        for (Lotto playerLotto : playerLottos.getLottoList()) {
-            correctCnt = winningLotto.compareLottoNums(playerLotto);
-            isBonusCorrect = winningLotto.compareBonusNum(playerLotto);
+        for (Lotto pLotto : playerLotto.getLottoList()) {
+            isBonusCorrect = false;
+            correctCnt = winningLotto.compareLottoNums(pLotto);
+            if(correctCnt == 5) isBonusCorrect = winningLotto.compareBonusNum(pLotto);
         }
-
-
     }
 
 }
