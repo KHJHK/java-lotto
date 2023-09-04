@@ -26,8 +26,21 @@ public enum Prize {
         return prize;
     }
 
-    public boolean getIsBonusCorrect() {
-        return isBonusCorrect;
+    public boolean getIsBonusCorrect() { return isBonusCorrect; }
+
+    public static Prize comparePrize(int correctCnt){
+        for (Prize prize : Prize.values()){
+            if(prize.correctCnt == correctCnt) return prize;
+        }
+        return LOSE;
     }
+
+    public static Prize comparePrize(boolean isBonusCorrect){
+        if(isBonusCorrect){
+            return SECOND;
+        }
+        return THIRD;
+    }
+
 
 }
