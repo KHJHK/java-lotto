@@ -22,9 +22,11 @@ public class WinningLotto{
     
     public int compareLottoNums(Lotto lotto){
         int correctCnt = 0;
-        for (int idx = 0; idx < WINNING_LOTTO_CNT; idx++)
-            if(lotto.getNumbers().get(idx) == winningLotto.getNumbers().get(idx)) correctCnt++;
-
+        for (int idx = 0; idx < WINNING_LOTTO_CNT; idx++){
+            if(winningLotto.getNumbers().contains(lotto.getNumbers().get(idx))){
+                correctCnt++;
+            }
+        }
         return correctCnt;
     }
 

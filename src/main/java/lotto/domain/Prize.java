@@ -1,12 +1,12 @@
 package lotto.domain;
 
 public enum Prize {
-    FIRST(2_000_000_000, 6, false),
-    SECOND(30_000_000, 5, true),
-    THIRD(1_500_000, 5, false),
-    FOURTH(50_000, 4, false),
+    LOSE(0, 0, false),
     FIFTH(5_000, 3, false),
-    LOSE(0, 0, false);
+    FOURTH(50_000, 4, false),
+    THIRD(1_500_000, 5, false),
+    SECOND(30_000_000, 5, true),
+    FIRST(2_000_000_000, 6, false);
 
     private final long prize;
     private final int correctCnt;

@@ -8,8 +8,8 @@ import java.util.List;
 public class LottoAmount {
 
     private static final int MIN_PAY = 1000;
-    private static final String PAY_ERROR_MESSAGE = "금액은 1000원 단위로 입력 가능합니다.";
-    private static final String ZERO_PAY_ERROR_MESSAGE = "금액은 1000원 이상 입력해야합니다(1000원 단위로 입력 가능).";
+    private static final String PAY_ERROR_MESSAGE = "[ERROR]금액은 1000원 단위로 입력 가능합니다.";
+    private static final String ZERO_PAY_ERROR_MESSAGE = "[ERROR]금액은 1000원 이상 입력해야합니다(1000원 단위로 입력 가능).";
     private final int amount;
 
     public LottoAmount(int amount) {
@@ -25,5 +25,7 @@ public class LottoAmount {
     public int lottoCount() {
         return amount / MIN_PAY;
     }
+
+    public int getAmount(){ return amount; }
 
 }
