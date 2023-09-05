@@ -11,8 +11,8 @@ public class Controller {
     public static void start(){
         try{
             LottoAmount lottoAmount = new LottoAmount(InputView.inputAmount());
-            PlayerLotto playerLotto = new PlayerLotto(lottoAmount.lottoCount());
             OutputView.printLottoBuyCnt(lottoAmount.lottoCount());
+            PlayerLotto playerLotto = new PlayerLotto(lottoAmount.lottoCount());
             OutputView.printPlayerLottoList(playerLotto);
             WinningLotto winningLotto = new WinningLotto(InputView.inputWinningNums(), InputView.inputBonusNum());
             OutputView.printPirze(PrizeCheck.checkPrize(playerLotto, winningLotto));

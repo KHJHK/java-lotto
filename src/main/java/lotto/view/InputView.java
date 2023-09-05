@@ -33,7 +33,7 @@ public class InputView {
         return bonusNum;
     }
 
-    public static int parseInt(String input){
+    private static int parseInt(String input){
         try {
             return Integer.parseInt(input);
         }catch (NumberFormatException e){
@@ -42,7 +42,7 @@ public class InputView {
     }
 
     //쉼표 없는 입력도 걸려야함 - ERROR 잡기
-    public static List<Integer> parseStrNumsToInt(String input){
+    private static List<Integer> parseStrNumsToInt(String input){
         List<Integer> winningLottoNums = new ArrayList<>();
         for (String numStr:input.split(",")) {
             int num = parseInt(numStr);
@@ -54,7 +54,7 @@ public class InputView {
         return winningLottoNums;
     }
 
-    public static void validateLottoNumRange(int num) {
+    private static void validateLottoNumRange(int num) {
         if(num < MIN_NUM || num > MAX_NUM) throw new IllegalArgumentException(LOTTO_NUM_OUT_OF_RANGE);
     }
 }

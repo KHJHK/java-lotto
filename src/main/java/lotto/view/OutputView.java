@@ -39,7 +39,7 @@ public class OutputView {
     }
 
     public static void printReturnRate(double returnRate){
-        System.out.printf("총 수익률은 %.2f%s입니다", returnRate, '%');
+        System.out.printf("총 수익률은 %.2f%s입니다.", returnRate, '%');
     }
 
 }
